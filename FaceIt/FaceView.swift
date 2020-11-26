@@ -11,14 +11,14 @@ import UIKit
 @IBDesignable
 class FaceView: UIView {
 
-    var scale: CGFloat = 0.9
+    @IBInspectable var scale: CGFloat = 0.9 {didSet {setNeedsDisplay()}}
     private var faceRadius: CGFloat {return min(bounds.size.width, bounds.size.height) / 2 * scale}
     private var faceCenter: CGPoint {return CGPoint(x: bounds.midX, y: bounds.midY)}
-    private var lineWidth: CGFloat = 5.0
-    private var lineColor = UIColor.blue
-    private var eyesOpen: Bool = false
-    private var eyesHappy: Bool = true
-    private var mouthCurv: CGFloat = 1.2
+    @IBInspectable var lineWidth: CGFloat = 5.0
+    @IBInspectable var lineColor: UIColor = UIColor.blue {didSet {setNeedsDisplay()}}
+    @IBInspectable var eyesOpen: Bool = true {didSet {setNeedsDisplay()}}
+    @IBInspectable var eyesHappy: Bool = false
+    @IBInspectable var mouthCurv: CGFloat = 1.2
     
     private func pathForFace() -> UIBezierPath {
         let path = UIBezierPath(arcCenter: faceCenter, radius: faceRadius, startAngle: 0, endAngle: 2 * CGFloat.pi, clockwise: false)
@@ -73,12 +73,12 @@ class FaceView: UIView {
         let mouthRect = CGRect(
             x: faceCenter.x - mouthWidth / 2,
             y: faceCenter.y + mouthOffset,
-            width: mouthWidth, height:
-            mouthHeight
+            width: mouthWidth,
+            height: mouthHeight
         )
         let start = CGPoint(x: mouthRect.minX, y: mouthRect.midY)
         let end = CGPoint(x: mouthRect.maxX, y: mouthRect.midY)
-        let cp = CGPoint(x: mouthRect.midX, y: mouthRect.midY * mouthCurv)
+        let cp = CGPoint(x: mouthRect.midX, y: mouthRect.midY * mouthCurv) //?? mouthRect.minY
         let path = UIBezierPath()
         path.move(to: start)
         path.addQuadCurve(to: end, controlPoint: cp)
@@ -95,6 +95,15 @@ class FaceView: UIView {
         pathForEye(Eye.right).stroke()
         pathForMouth().stroke()
     }
+    
+    @objc func changeScale(pinchRecognizer: UIPinchGestureRecognizer) {
+        if pinchRecognizer.state == .changed {
+            scale *= pinchRecognizer.scale
+            pinchRecognizer.scale = 1
+        }
+    }
+    
+    
     
 
 }
