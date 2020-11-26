@@ -13,6 +13,7 @@
 		B530A62A256F98E500448387 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B530A628256F98E500448387 /* Main.storyboard */; };
 		B530A62C256F98E600448387 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B530A62B256F98E600448387 /* Assets.xcassets */; };
 		B530A62F256F98E600448387 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B530A62D256F98E600448387 /* LaunchScreen.storyboard */; };
+		B530A639256F9A8000448387 /* FaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B530A638256F9A8000448387 /* FaceView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		B530A62B256F98E600448387 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B530A62E256F98E600448387 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B530A630256F98E600448387 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B530A638256F9A8000448387 /* FaceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 				B530A622256F98E500448387 /* AppDelegate.swift */,
 				B530A624256F98E500448387 /* SceneDelegate.swift */,
 				B530A626256F98E500448387 /* ViewController.swift */,
+				B530A638256F9A8000448387 /* FaceView.swift */,
 				B530A628256F98E500448387 /* Main.storyboard */,
 				B530A62B256F98E600448387 /* Assets.xcassets */,
 				B530A62D256F98E600448387 /* LaunchScreen.storyboard */,
@@ -141,6 +144,7 @@
 				B530A627256F98E500448387 /* ViewController.swift in Sources */,
 				B530A623256F98E500448387 /* AppDelegate.swift in Sources */,
 				B530A625256F98E500448387 /* SceneDelegate.swift in Sources */,
+				B530A639256F9A8000448387 /* FaceView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
