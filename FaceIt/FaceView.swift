@@ -8,6 +8,7 @@
 
 import UIKit
 
+@IBDesignable
 class FaceView: UIView {
 
     var scale: CGFloat = 0.9
@@ -15,8 +16,9 @@ class FaceView: UIView {
     private var faceCenter: CGPoint {return CGPoint(x: bounds.midX, y: bounds.midY)}
     private var lineWidth: CGFloat = 5.0
     private var lineColor = UIColor.blue
-    private var eyesOpen: Bool = true
+    private var eyesOpen: Bool = false
     private var eyesHappy: Bool = true
+    private var mouthCurv: CGFloat = 1.2
     
     private func pathForFace() -> UIBezierPath {
         let path = UIBezierPath(arcCenter: faceCenter, radius: faceRadius, startAngle: 0, endAngle: 2 * CGFloat.pi, clockwise: false)
@@ -33,8 +35,8 @@ class FaceView: UIView {
         static let faceRadiusToEyeOffset: CGFloat = 2.5
         static let faceRadiusToEyeRadius: CGFloat = 5
         static let faceRadiusToMouthOffset: CGFloat = 3
-        static let faceRadiusToMouthWidth: CGFloat = 1
-        static let faceRadiusToMouthHeight: CGFloat = 3
+        static let faceRadiusToMouthWidth: CGFloat = 0.8
+        static let faceRadiusToMouthHeight: CGFloat = 4
     }
     
     private func pathForEye(_ eye: Eye) -> UIBezierPath {
@@ -63,6 +65,26 @@ class FaceView: UIView {
         path.lineWidth = lineWidth
         return path
     }
+    
+    private func pathForMouth() -> UIBezierPath {
+        let mouthOffset = faceRadius / Ratios.faceRadiusToMouthOffset
+        let mouthWidth = faceRadius / Ratios.faceRadiusToMouthWidth
+        let mouthHeight = faceRadius / Ratios.faceRadiusToMouthHeight
+        let mouthRect = CGRect(
+            x: faceCenter.x - mouthWidth / 2,
+            y: faceCenter.y + mouthOffset,
+            width: mouthWidth, height:
+            mouthHeight
+        )
+        let start = CGPoint(x: mouthRect.minX, y: mouthRect.midY)
+        let end = CGPoint(x: mouthRect.maxX, y: mouthRect.midY)
+        let cp = CGPoint(x: mouthRect.midX, y: mouthRect.midY * mouthCurv)
+        let path = UIBezierPath()
+        path.move(to: start)
+        path.addQuadCurve(to: end, controlPoint: cp)
+        path.lineWidth = lineWidth
+        return path
+    }
 
     // Only override draw() if you perform custom drawing.
     // An empty implementation adversely affects performance during animation.
@@ -71,6 +93,7 @@ class FaceView: UIView {
         pathForFace().stroke()
         pathForEye(Eye.left).stroke()
         pathForEye(Eye.right).stroke()
+        pathForMouth().stroke()
     }
     
 
