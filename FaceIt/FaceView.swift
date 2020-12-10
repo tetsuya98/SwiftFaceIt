@@ -17,8 +17,8 @@ class FaceView: UIView {
     @IBInspectable var lineWidth: CGFloat = 5.0
     @IBInspectable var lineColor: UIColor = UIColor.blue {didSet {setNeedsDisplay()}}
     @IBInspectable var eyesOpen: Bool = true {didSet {setNeedsDisplay()}}
-    @IBInspectable var eyesHappy: Bool = false
-    @IBInspectable var mouthCurv: CGFloat = 1.2
+    @IBInspectable var eyesHappy: Bool = false 
+    @IBInspectable var mouthCurv: CGFloat = 1.2 {didSet {setNeedsDisplay()}}
     
     private func pathForFace() -> UIBezierPath {
         let path = UIBezierPath(arcCenter: faceCenter, radius: faceRadius, startAngle: 0, endAngle: 2 * CGFloat.pi, clockwise: false)
@@ -103,7 +103,4 @@ class FaceView: UIView {
         }
     }
     
-    
-    
-
 }
