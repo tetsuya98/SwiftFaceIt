@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class FaceViewController: UIViewController {
 
     @IBOutlet weak var faceView: FaceView! {
         didSet {
@@ -66,9 +66,9 @@ class ViewController: UIViewController {
     private func updateUI() {
         switch expression.eyes {
         case .open:
-            faceView.eyesOpen = true
+            faceView?.eyesOpen = true
         case .closed:
-            faceView.eyesOpen = false
+            faceView?.eyesOpen = false
         }
         faceView?.mouthCurv = CGFloat(mouthCurv[expression.mouth] ?? 1.0)
     }

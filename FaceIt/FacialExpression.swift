@@ -12,8 +12,6 @@ struct FacialExpression {
     enum Eyes: Int {
         case open
         case closed
-        //case happy
-        //case sleep
     }
     
     enum Mouth: Int {

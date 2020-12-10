@@ -17,7 +17,6 @@ class FaceView: UIView {
     @IBInspectable var lineWidth: CGFloat = 5.0
     @IBInspectable var lineColor: UIColor = UIColor.blue {didSet {setNeedsDisplay()}}
     @IBInspectable var eyesOpen: Bool = true {didSet {setNeedsDisplay()}}
-    @IBInspectable var eyesHappy: Bool = false 
     @IBInspectable var mouthCurv: CGFloat = 1.2 {didSet {setNeedsDisplay()}}
     
     private func pathForFace() -> UIBezierPath {
@@ -54,13 +53,9 @@ class FaceView: UIView {
         if eyesOpen {
             path = UIBezierPath(arcCenter: eyeCenter, radius: eyeRadius, startAngle: 0, endAngle: 2 * CGFloat.pi, clockwise: false)
         } else{
-            if eyesHappy {
-                path = UIBezierPath(arcCenter: eyeCenter, radius: eyeRadius, startAngle: 0, endAngle: CGFloat.pi, clockwise: false)
-            } else {
-                path = UIBezierPath()
-                path.move(to: CGPoint(x: eyeCenter.x - eyeRadius, y: eyeCenter.y))
-                path.addLine(to: CGPoint(x: eyeCenter.x + eyeRadius, y: eyeCenter.y))
-            }
+            path = UIBezierPath()
+            path.move(to: CGPoint(x: eyeCenter.x - eyeRadius, y: eyeCenter.y))
+            path.addLine(to: CGPoint(x: eyeCenter.x + eyeRadius, y: eyeCenter.y))
         }
         path.lineWidth = lineWidth
         return path

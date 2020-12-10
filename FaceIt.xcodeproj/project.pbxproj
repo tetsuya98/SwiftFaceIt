@@ -7,9 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		00AE5EAD25821CAD00B8437F /* EmotionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00AE5EAC25821CAD00B8437F /* EmotionViewController.swift */; };
 		B530A623256F98E500448387 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B530A622256F98E500448387 /* AppDelegate.swift */; };
 		B530A625256F98E500448387 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B530A624256F98E500448387 /* SceneDelegate.swift */; };
-		B530A627256F98E500448387 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B530A626256F98E500448387 /* ViewController.swift */; };
+		B530A627256F98E500448387 /* FaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B530A626256F98E500448387 /* FaceViewController.swift */; };
 		B530A62A256F98E500448387 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B530A628256F98E500448387 /* Main.storyboard */; };
 		B530A62C256F98E600448387 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B530A62B256F98E600448387 /* Assets.xcassets */; };
 		B530A62F256F98E600448387 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B530A62D256F98E600448387 /* LaunchScreen.storyboard */; };
@@ -18,10 +19,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		00AE5EAC25821CAD00B8437F /* EmotionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmotionViewController.swift; sourceTree = "<group>"; };
 		B530A61F256F98E500448387 /* FaceIt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FaceIt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B530A622256F98E500448387 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B530A624256F98E500448387 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		B530A626256F98E500448387 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		B530A626256F98E500448387 /* FaceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceViewController.swift; sourceTree = "<group>"; };
 		B530A629256F98E500448387 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B530A62B256F98E600448387 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B530A62E256F98E600448387 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -62,9 +64,10 @@
 			children = (
 				B530A622256F98E500448387 /* AppDelegate.swift */,
 				B530A624256F98E500448387 /* SceneDelegate.swift */,
-				B530A626256F98E500448387 /* ViewController.swift */,
+				B530A626256F98E500448387 /* FaceViewController.swift */,
 				B530A638256F9A8000448387 /* FaceView.swift */,
 				B530A628256F98E500448387 /* Main.storyboard */,
+				00AE5EAC25821CAD00B8437F /* EmotionViewController.swift */,
 				B530A63A256FBA0B00448387 /* FacialExpression.swift */,
 				B530A62B256F98E600448387 /* Assets.xcassets */,
 				B530A62D256F98E600448387 /* LaunchScreen.storyboard */,
@@ -144,7 +147,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B530A627256F98E500448387 /* ViewController.swift in Sources */,
+				00AE5EAD25821CAD00B8437F /* EmotionViewController.swift in Sources */,
+				B530A627256F98E500448387 /* FaceViewController.swift in Sources */,
 				B530A623256F98E500448387 /* AppDelegate.swift in Sources */,
 				B530A63B256FBA0B00448387 /* FacialExpression.swift in Sources */,
 				B530A625256F98E500448387 /* SceneDelegate.swift in Sources */,
